@@ -8,7 +8,7 @@ class BusinessTodaySpider(scrapy.Spider):
 
 
     def parse(self, response):
-        urls = pd.read_csv('./esg_crawler/dev_url.csv').URL.to_list()
+        urls = pd.read_csv('./url_example.csv').URL.to_list()
 
         for url in urls:
             yield scrapy.Request(url, self.parse_content, dont_filter=True)
