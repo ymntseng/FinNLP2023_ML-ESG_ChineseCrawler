@@ -1,7 +1,5 @@
 # ESG Crawler
 
-[![hackmd-github-sync-badge](https://hackmd.io/KZUFVb1WTqSGJTDuMR6eHg/badge)](https://hackmd.io/KZUFVb1WTqSGJTDuMR6eHg)
-
 A web crawler for ESG news from Business Today. （https://esg.businesstoday.com.tw/catalog/180686/）.
 
 
