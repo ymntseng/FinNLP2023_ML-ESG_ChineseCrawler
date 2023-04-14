@@ -10,5 +10,12 @@ class EsgCrawlerItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
 
-    news_url = scrapy.Field()
+    # origin
+    news_pk = scrapy.Field()
+    URL = scrapy.Field()
+    news_title = scrapy.Field()
+    ESG_label = scrapy.Field()
+
+    # new add by crawler
     news_content_html = scrapy.Field()
+    news_content = scrapy.Field()
