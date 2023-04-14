@@ -9,6 +9,7 @@ class BusinessTodaySpider(scrapy.Spider):
     start_urls = ['http://esg.businesstoday.com.tw/catalog/180686/']
 
     def __init__(self, dataset='Train'):
+        # args: dataset = 'Train' or 'Dev'
         self.data = pd.read_json(f'./data/ML-ESG_Chinese_{dataset}.json')
 
     def parse(self, response):
