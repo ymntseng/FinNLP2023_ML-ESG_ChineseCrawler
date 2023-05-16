@@ -1,7 +1,7 @@
 # ESG Crawler
+
 A web crawler for ESG news from Business Today. （https://esg.businesstoday.com.tw/catalog/180686/）.
 
-[FinNLP 2023] Shared Task: Multi-Lingual ESG Issue Identification (ML-ESG)
 
 ## Environment Requirements
 
@@ -9,20 +9,30 @@ A web crawler for ESG news from Business Today. （https://esg.businesstoday.com
 - Pandas 2.0.0
 - Scrapy 2.8.0
 - Scrapy-splash 0.8.0
-
+- Bs4 0.0.1
 
 ## Usage
-- First, you need to install the requirements.
+- First, you need to install the requirements.（Note that the training set has already in **data/**.）
+
 ```
 pip install -r requirements.txt
 ```
 
-- Second, you need to prepare the web url list as the same format as `url_example.csv`.
+- Then, you can crawl the news content with HTML tags and the clean news content of all urls in the training set by giving the argument `-a dataset=Train` or `-a dataset=Dev`.
 
-- Last, you can crawl the HTML content of all web in your web url list and output the result into json or csv files.
+
+- Finally, you can easily output the result into json or csv files as follows. The output will have two new columns along with the four columns of training set, so the output data shape will be（# of news, 6）. 
+
+    - news_content：clean news content
+    - news_content_html：origin HTML tags of news content
+
 ```
-scrapy crawl business_today -o {output.csv}
-scrapy crawl business_today -o {output.json}
+scrapy crawl business_today -a dataset={dataset} -o {output.csv}
+scrapy crawl business_today -a dataset={dataset} -o {output.json}
 ```
 
-## 
+## Reference
+
+Please refer to FinNLP-2023 website for more details.
+
+[FinNLP 2023] Shared Task: Multi-Lingual ESG Issue Identification (ML-ESG)：https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-2023/shared-task-esg-issue
